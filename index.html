@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quarterly Earnings – Interactive RevealJS Deck</title>
+
+    <!-- Reveal core + theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css" />
+    <link id="theme" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css" />
+
+    <!-- Syntax highlighting theme for code -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css" />
+
+    <style>
+      :root {
+        --r-main-font: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        --r-heading-font: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      }
+      .reveal .slides { text-align: left; }
+      .reveal h1, .reveal h2, .reveal h3 { letter-spacing: .2px; }
+      .reveal .slide-footer { position: absolute; left: 24px; bottom: 12px; font-size: .52em; opacity: .65; }
+      .pill { display: inline-block; padding: .25em .6em; border-radius: 999px; font-size: .6em; background: #eef2ff; color: #3730a3; }
+      .kpi { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+      .kpi .card { border-radius: 16px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.05); border: 1px solid #f1f5f9; }
+      .muted { opacity: .7; }
+      @media (max-width: 900px) { .kpi { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- Title / Contact -->
+        <section data-background-gradient="linear-gradient(135deg,#ffffff,#f7fbff)">
+          <h1 style="margin-bottom:.2em">Quarterly Earnings – Interactive Report</h1>
+          <p class="muted" style="margin-top:0">Modern, live-demo friendly deck built with <strong>RevealJS</strong></p>
+
+          <div style="margin: 24px 0 12px">
+            <span class="pill">Technical Consultant · Financial Institution</span>
+          </div>
+
+          <p class="fragment">Prepared by <strong>Naveen N</strong></p>
+          <p class="fragment">Contact: <a href="mailto:22ds3000189@ds.study.iitm.ac.in">22ds3000189@ds.study.iitm.ac.in</a></p>
+
+          <aside class="notes">
+            Welcome and quick orientation. Mention that this deck supports speaker notes (press <kbd>S</kbd>), overview (press <kbd>O</kbd>), and keyboard help (press <kbd>?</kbd>).
+          </aside>
+          <div class="slide-footer">Press <kbd>S</kbd> for notes · <kbd>O</kbd> overview · <kbd>F</kbd> fullscreen</div>
+        </section>
+
+        <!-- Markdown slide (at least one) -->
+        <section data-markdown data-separator="^---$" data-separator-notes="^Note:" data-charset="utf-8">
+          <textarea data-template>
+## KPI Snapshot _(Markdown)_
+
+- **Revenue:** $3.2B _(↑ 7% YoY)_
+- **EBITDA:** $640M _(margin +60 bps)_
+- **Free Cash Flow:** $410M
+- **Guidance:** Maintained
+
+Note:
+Reinforce YoY growth and margin expansion; call out cash conversion.
+---
+### Growth Drivers _(Markdown)_
+
+1. New product launches
+2. Pricing optimization
+3. Cost discipline
+
+Note:
+Cite specific programs backing each driver; keep it high level on first pass.
+          </textarea>
+        </section>
+
+        <!-- Fragments / animations -->
+        <section>
+          <h2>Outlook Drivers</h2>
+          <ul>
+            <li class="fragment">Volume recovery in core segments</li>
+            <li class="fragment fade-up">Channel inventory normalization</li>
+            <li class="fragment fade-in-then-semi-out">FX tailwinds into H2</li>
+          </ul>
+          <aside class="notes">Reveal these one by one to pace the discussion; pause for clarifying questions.</aside>
+        </section>
+
+        <!-- Code sample with syntax highlighting -->
+        <section>
+          <h2>Revenue Bridge (Code Sample)</h2>
+          <pre><code class="language-python" data-trim data-line-numbers>
+import pandas as pd
+
+bridge = pd.DataFrame({
+    "component": ["Starting", "Price", "Volume", "Mix", "FX", "Ending"],
+    "value": [3000, 120, 80, -40, 40, 3200]
+})
+
+bridge["cum"] = bridge["value"].cumsum()
+print(bridge)
+          </code></pre>
+          <aside class="notes">Explain the bridge logic; note that this is demo code for illustration.</aside>
+        </section>
+
+        <!-- Math / formulas -->
+        <section>
+          <h2>Finance Math</h2>
+          <p>CAPM:&nbsp;\( E[R_i] = R_f + \beta_i (E[R_m] - R_f) \)</p>
+          <p>Gordon Growth:&nbsp;\( P_0 = \dfrac{D_1}{r - g} \)</p>
+          <aside class="notes">Use conservative assumptions for \(r\) and \(g\). Remind audience these are simplified illustrative formulas.</aside>
+        </section>
+
+        <!-- Speaker notes example -->
+        <section>
+          <h2>Q&amp;A</h2>
+          <p class="fragment">Common follow-ups: cash conversion, capex cadence, FX sensitivity.</p>
+          <aside class="notes">Keep answers concise; offer to follow up with detailed models post-call.</aside>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Reveal core -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <!-- Plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+
+    <script>
+      Reveal.initialize({
+        hash: true,
+        controls: true,
+        progress: true,
+        slideNumber: 'c/t',
+        transition: 'slide',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3 ],
+        // MathJax 3 configuration
+        mathjax3: {
+          tex: {
+            inlineMath: [['\\(','\\)'], ['$', '$']],
+            displayMath: [['\\[','\\]'], ['$$','$$']]
+          }
+        }
+      });
+
+      // Optional: log when overview mode is shown (press 'O')
+      Reveal.addEventListener('overviewshown', () => {
+        console.log('Overview mode on');
+      });
+    </script>
+  </body>
+</html>
